@@ -1,0 +1,22 @@
+2014-03-10 16:11:13,399 Count of Branch:42
+2014-03-10 16:11:13,406 SID 2 BranchA83-FLU224
+2014-03-10 16:11:13,460 GetDataByDPW
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at TicketManageDLL.ServiceDLL.AirNumber2Code(String number, SqlConnection sqlConn) in E:\lsrlsr\Projects\InvoiceManage\TicketManage\TicketManageDLL\ServiceDLL.cs:line 227
+   at TicketManageDLL.ServiceDLL.GetDataByDPW(String strRecLoc, String& strRes, SqlConnection sqlConn) in E:\lsrlsr\Projects\InvoiceManage\TicketManage\TicketManageDLL\ServiceDLL.cs:line 1135
+2014-03-10 16:11:13,474 LQBAGL - Collect Error
+2014-03-10 18:07:11,973 Count of Branch:42
+2014-03-10 18:07:11,986 SID 2 BranchA83-FLU224
+2014-03-10 18:07:50,159 Count of Branch:42
+2014-03-10 18:07:50,169 SID 2 BranchA83-FLU224
+2014-03-10 19:15:08,003 Count of Branch:42
+2014-03-10 19:15:08,014 SID 2 BranchA83-FLU224
+2014-03-10 19:16:13,742 Count of Branch:42
+2014-03-10 19:16:13,755 SID 2 BranchA83-FLU224

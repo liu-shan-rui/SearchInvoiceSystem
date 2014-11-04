@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{463DB7E6-0924-401D-818F-C5216CCE47B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP</RootNamespace>
+    <AssemblyName>ERP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Items\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="BranchManager.aspx" />
+    <Content Include="Images\Ticket.png" />
+    <Content Include="Images\TicketVoid.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Images\ui-icons_454545_256x240.png" />
+    <Content Include="Images\ui-icons_888888_256x240.png" />
+    <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="image\ticketImage.gif" />
+    <Content Include="image\view.gif" />
+    <Content Include="InvoicePDF.aspx" />
+    <Content Include="PDFFile\GTT-logo-head.gif" />
+    <Content Include="SearchbyAgt.aspx" />
+    <Content Include="CreateAccounting.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="PdfView.aspx" />
+    <Content Include="SearchAgent.aspx" />
+    <Content Include="App_Themes\Default\Images\1.gif" />
+    <Content Include="App_Themes\Default\Images\110logo.gif" />
+    <Content Include="App_Themes\Default\Images\AdminLogin.jpg" />
+    <Content Include="App_Themes\Default\Images\ajax_special_updater.gif" />
+    <Content Include="App_Themes\Default\Images\FileNotFound.jpg" />
+    <Content Include="App_Themes\Default\Images\GenericErrorPage.jpg" />
+    <Content Include="App_Themes\Default\Images\header-3.gif" />
+    <Content Include="App_Themes\Default\Images\header.jpg" />
+    <Content Include="App_Themes\Default\Images\header1.gif" />
+    <Content Include="App_Themes\Default\Images\header2.gif" />
+    <Content Include="App_Themes\Default\Images\header4.gif" />
+    <Content Include="App_Themes\Default\Images\nav_bg.png" />
+    <Content Include="App_Themes\Default\Images\news_bg.gif" />
+    <Content Include="App_Themes\Default\NewsPage.css" />
+    <Content Include="QTools.aspx" />
+    <Content Include="SearchbyAcct.aspx" />
+    <Content Include="TicketImage.aspx" />
+    <Content Include="WLInvoiceSearch.aspx" />
+    <Content Include="CustomerInvoiceSearch.aspx" />
+    <Content Include="image\del.gif" />
+    <Content Include="image\edit.gif" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Scripts\image\del.gif" />
+    <Content Include="Scripts\image\edit.gif" />
+    <Content Include="login.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.6.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.7.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.7.min.txt" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="SystemMasterMenu.aspx" />
+    <Content Include="SystemMasterMenuCollection.aspx" />
+    <Content Include="SystemObjectMenu.aspx" />
+    <Content Include="SystemObjectMenuCollection.aspx" />
+    <Content Include="SystemPersonMenu.aspx" />
+    <Content Include="SystemPersonMenuCollection.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchManager.aspx.cs">
+      <DependentUpon>BranchManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchManager.aspx.designer.cs">
+      <DependentUpon>BranchManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comm.cs" />
+    <Compile Include="InvoicePDF.aspx.cs">
+      <DependentUpon>InvoicePDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvoicePDF.aspx.designer.cs">
+      <DependentUpon>InvoicePDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchbyAgt.aspx.cs">
+      <DependentUpon>SearchbyAgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchbyAgt.aspx.designer.cs">
+      <DependentUpon>SearchbyAgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAccounting.aspx.cs">
+      <DependentUpon>CreateAccounting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccounting.aspx.designer.cs">
+      <DependentUpon>CreateAccounting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfView.aspx.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PdfView.aspx.designer.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAgent.aspx.cs">
+      <DependentUpon>SearchAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAgent.aspx.designer.cs">
+      <DependentUpon>SearchAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QTools.aspx.cs">
+      <DependentUpon>QTools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QTools.aspx.designer.cs">
+      <DependentUpon>QTools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchbyAcct.aspx.cs">
+      <DependentUpon>SearchbyAcct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchbyAcct.aspx.designer.cs">
+      <DependentUpon>SearchbyAcct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T.cs" />
+    <Compile Include="TicketImage.aspx.cs">
+      <DependentUpon>TicketImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketImage.aspx.designer.cs">
+      <DependentUpon>TicketImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSPANWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WLInvoiceSearch.aspx.cs">
+      <DependentUpon>WLInvoiceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WLInvoiceSearch.aspx.designer.cs">
+      <DependentUpon>WLInvoiceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInvoiceSearch.aspx.cs">
+      <DependentUpon>CustomerInvoiceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerInvoiceSearch.aspx.designer.cs">
+      <DependentUpon>CustomerInvoiceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSite.Master.cs">
+      <DependentUpon>LoginSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginSite.Master.designer.cs">
+      <DependentUpon>LoginSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemMasterMenu.aspx.cs">
+      <DependentUpon>SystemMasterMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMasterMenu.aspx.designer.cs">
+      <DependentUpon>SystemMasterMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemMasterMenuCollection.aspx.cs">
+      <DependentUpon>SystemMasterMenuCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemMasterMenuCollection.aspx.designer.cs">
+      <DependentUpon>SystemMasterMenuCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemObjectMenu.aspx.cs">
+      <DependentUpon>SystemObjectMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemObjectMenu.aspx.designer.cs">
+      <DependentUpon>SystemObjectMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemObjectMenuCollection.aspx.cs">
+      <DependentUpon>SystemObjectMenuCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemObjectMenuCollection.aspx.designer.cs">
+      <DependentUpon>SystemObjectMenuCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemPersonMenu.aspx.cs">
+      <DependentUpon>SystemPersonMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemPersonMenu.aspx.designer.cs">
+      <DependentUpon>SystemPersonMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemPersonMenuCollection.aspx.cs">
+      <DependentUpon>SystemPersonMenuCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemPersonMenuCollection.aspx.designer.cs">
+      <DependentUpon>SystemPersonMenuCollection.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Pictures\" />
+    <Folder Include="TktImages\" />
+    <Folder Include="WL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\NewsPage.skin" />
+    <Content Include="Site.Master" />
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoginSite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{AA6FEAA6-96F7-40CA-A2DC-FA895C1C4F61}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{44753771-A931-4FF1-B6A2-58A71408AD40}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ec2-184-169-214-190.us-west-1.compute.amazonaws.com:8080//WebServiceProject/services/WorldSpanws%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSPANWS\</RelPath>
+      <UpdateFromURL>http://ec2-184-169-214-190.us-west-1.compute.amazonaws.com:8080//WebServiceProject/services/WorldSpanws%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ERP_WSPANWS_WorldSpanwsService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSPANWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSPANWS\WorldSpanws.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10860</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

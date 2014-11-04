@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ec2-184-169-214-190.us-west-1.compute.amazonaws.com:8080//WebServiceProject/services/WorldSpanws?wsdl" filename="WorldSpanws.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

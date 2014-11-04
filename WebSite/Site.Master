@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ERP.SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta content="text/html；charset=UTF-8" />
+    <title></title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.6.1.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.8.7.min.js" type="text/javascript"></script>
+    <link href="Styles/jquery-ui.css" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".date_class").datepicker();
+            $(".number_class").keypress(function () {
+                var keyPressed;
+                if (navigator.appName == "Netscape") {
+                    keyPressed = arguments.callee.caller.arguments[0].which;
+                }
+                else if (navigator.appName == "Microsoft Internet Explorer") {
+                    keyPressed = window.event.keyCode;
+                }
+
+                if (!(((keyPressed >= 48) && (keyPressed <= 57) || (keyPressed == 8 || keyPressed == 0)))) {
+                    var event = window.event || arguments.callee.caller.arguments[0];
+                    if (navigator.appName == "Microsoft Internet Explorer") {
+                        event.returnValue = false;
+                    }
+                    else if (navigator.appName == "Netscape") {
+                        event.preventDefault();
+                    }
+                }
+            });
+            AutoComplete();
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+     <%--   <div id="nav">
+            <div id="navinner">
+                <ul>
+                    <li><a href="#">Invoice System</a></li>
+                    <li><a href="Logout.aspx">Logout</a></li>
+                </ul>
+            </div>
+        </div>--%>
+
+        <br />
+        <div id="col1_list">
+            <div class="box">
+                <div class="box_title">
+                    Customer Invoice
+                </div>
+                <div class="box_text">
+                    <asp:TreeView ID="tvMenuACT" runat="server" EnableViewState="False" ImageSet="Arrows">
+                        <Nodes>
+                            <asp:TreeNode NavigateUrl="~/CustomerInvoiceSearch.aspx" Text="Search Ticket"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/SearchbyAcct.aspx" Text="Search Ticket【ACT】"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/SearchbyAgt.aspx" Text="Search Ticket【AGT】"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/WLInvoiceSearch.aspx" Text="WL Compare"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/QTools.aspx" Text="Q Tools"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/CreateAccounting.aspx" Text="ACT Mgmt"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/BranchManager.aspx" Text="AGT Mgmt"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/SearchAgent.aspx" Text="Search Account"></asp:TreeNode>
+                            
+                        </Nodes>
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                        <NodeStyle Font-Names="Verdana" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="0px" VerticalPadding="4px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                            VerticalPadding="0px" />
+                    </asp:TreeView>
+                    <asp:TreeView ID="tvMenuAGT" Visible="false" runat="server" EnableViewState="False" ImageSet="Arrows">
+                        <Nodes>                                                     
+                            <asp:TreeNode NavigateUrl="~/SearchbyAgt.aspx" Text="Search Ticket【AGT】"></asp:TreeNode>
+                        </Nodes>
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                        <NodeStyle Font-Names="Verdana" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="0px" VerticalPadding="4px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                            VerticalPadding="0px" />
+                    </asp:TreeView>
+                </div>
+            </div>
+        </div>
+        <div id="col2_list">
+            <div class="box">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CustomerInvoice_AutoCollection_Client_Running.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CustomerInvoice_AutoCollection_Client_Running_CollectionInvoiceWS_CustomerInvoiceCollectionWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://acct.gttglobal.com/CustomerInvoice/CustomerInvoiceCollectionWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

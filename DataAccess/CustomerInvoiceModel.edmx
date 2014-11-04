@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CustomerInvoiceModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CustomerInvoiceModelStoreContainer">
+          <EntitySet Name="AccountInfo" EntityType="CustomerInvoiceModel.Store.AccountInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EntityNameValue" EntityType="CustomerInvoiceModel.Store.EntityNameValue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoice" EntityType="CustomerInvoiceModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvoicePassenger" EntityType="CustomerInvoiceModel.Store.InvoicePassenger" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvoiceRemark" EntityType="CustomerInvoiceModel.Store.InvoiceRemark" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvoiceTicket" EntityType="CustomerInvoiceModel.Store.InvoiceTicket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MasterMenu" EntityType="CustomerInvoiceModel.Store.MasterMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ObjectMenu" EntityType="CustomerInvoiceModel.Store.ObjectMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonMenu" EntityType="CustomerInvoiceModel.Store.PersonMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReadingLog" EntityType="CustomerInvoiceModel.Store.ReadingLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReadingLogLine" EntityType="CustomerInvoiceModel.Store.ReadingLogLine" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AccountInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="EntityNameValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EntityID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" />
+          <Property Name="IsDelete" Type="int" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RecordLocator" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReadingLogID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="FareAmount" Type="decimal" Scale="2" />
+          <Property Name="TaxAmount" Type="decimal" Scale="2" />
+          <Property Name="TotalAmount" Type="decimal" Scale="2" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+          <Property Name="AgentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="InvoiceDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="InvoicePassenger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceID" Type="uniqueidentifier" />
+          <Property Name="PassengerName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Position" Type="int" />
+          <Property Name="ReadingLogID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="InvoiceRemark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceID" Type="uniqueidentifier" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="InvoiceTicket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceID" Type="uniqueidentifier" />
+          <Property Name="TicketNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassengerName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MasterMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="CreatorID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ObjectMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="CreatorID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PersonMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="CreatorID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ReadingLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ReadingDate" Type="datetime" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Content" Type="text" />
+          <Property Name="FileCreateDate" Type="datetime" />
+          <Property Name="FileModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ReadingLogLine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ReadingLogID" Type="uniqueidentifier" />
+          <Property Name="Index" Type="int" />
+          <Property Name="Line" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CustomerInvoiceModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CustomerInvoiceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountInfo" EntityType="CustomerInvoiceModel.AccountInfo" />
+          <EntitySet Name="EntityNameValue" EntityType="CustomerInvoiceModel.EntityNameValue" />
+          <EntitySet Name="Invoice" EntityType="CustomerInvoiceModel.Invoice" />
+          <EntitySet Name="InvoiceRemark" EntityType="CustomerInvoiceModel.InvoiceRemark" />
+          <EntitySet Name="MasterMenu" EntityType="CustomerInvoiceModel.MasterMenu" />
+          <EntitySet Name="ObjectMenu" EntityType="CustomerInvoiceModel.ObjectMenu" />
+          <EntitySet Name="PersonMenu" EntityType="CustomerInvoiceModel.PersonMenu" />
+          <EntitySet Name="ReadingLog" EntityType="CustomerInvoiceModel.ReadingLog" />
+          <EntitySet Name="InvoiceTicket" EntityType="CustomerInvoiceModel.InvoiceTicket" />
+          <EntitySet Name="ReadingLogLine" EntityType="CustomerInvoiceModel.ReadingLogLine" />
+          <EntitySet Name="InvoicePassenger" EntityType="CustomerInvoiceModel.InvoicePassenger" />
+        </EntityContainer>
+        <EntityType Name="AccountInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Detail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EntityNameValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="EntityID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="IsDelete" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="RecordLocator" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ReadingLogID" Type="Guid" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="FareAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TaxAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Branch" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AgentName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AccountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InvoiceDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="InvoiceRemark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="InvoiceID" Type="Guid" />
+          <Property Name="Remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MasterMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="CreatorID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="ObjectMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="CreatorID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="PersonMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="CreatorID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="ReadingLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ReadingDate" Type="DateTime" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="DateTime" Name="FileCreateDate" />
+          <Property Type="DateTime" Name="FileModifyDate" />
+        </EntityType>
+        <EntityType Name="InvoiceTicket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="InvoiceID" />
+          <Property Type="String" Name="TicketNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PassengerName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReadingLogLine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="ReadingLogID" />
+          <Property Type="Int32" Name="Index" />
+          <Property Type="String" Name="Line" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InvoicePassenger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Guid" Name="InvoiceID" />
+          <Property Type="String" Name="PassengerName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Position" />
+          <Property Type="Guid" Name="ReadingLogID" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CustomerInvoiceModelStoreContainer" CdmEntityContainer="CustomerInvoiceEntities">
+          <EntitySetMapping Name="AccountInfo"><EntityTypeMapping TypeName="CustomerInvoiceModel.AccountInfo"><MappingFragment StoreEntitySet="AccountInfo">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+            <ScalarProperty Name="Detail" ColumnName="Detail" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EntityNameValue"><EntityTypeMapping TypeName="CustomerInvoiceModel.EntityNameValue"><MappingFragment StoreEntitySet="EntityNameValue">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Invoice"><EntityTypeMapping TypeName="CustomerInvoiceModel.Invoice"><MappingFragment StoreEntitySet="Invoice">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="RecordLocator" ColumnName="RecordLocator" />
+            <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+            <ScalarProperty Name="ReadingLogID" ColumnName="ReadingLogID" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="FareAmount" ColumnName="FareAmount" />
+            <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+            <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+            <ScalarProperty Name="Branch" ColumnName="Branch" />
+            <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+            <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+            <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="InvoiceRemark"><EntityTypeMapping TypeName="CustomerInvoiceModel.InvoiceRemark"><MappingFragment StoreEntitySet="InvoiceRemark">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+            <ScalarProperty Name="Remark" ColumnName="Remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MasterMenu"><EntityTypeMapping TypeName="CustomerInvoiceModel.MasterMenu"><MappingFragment StoreEntitySet="MasterMenu">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+            <ScalarProperty Name="CreatorID" ColumnName="CreatorID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ObjectMenu"><EntityTypeMapping TypeName="CustomerInvoiceModel.ObjectMenu"><MappingFragment StoreEntitySet="ObjectMenu">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+            <ScalarProperty Name="CreatorID" ColumnName="CreatorID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PersonMenu"><EntityTypeMapping TypeName="CustomerInvoiceModel.PersonMenu"><MappingFragment StoreEntitySet="PersonMenu">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+            <ScalarProperty Name="CreatorID" ColumnName="CreatorID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ReadingLog"><EntityTypeMapping TypeName="CustomerInvoiceModel.ReadingLog"><MappingFragment StoreEntitySet="ReadingLog">
+            <ScalarProperty Name="FileModifyDate" ColumnName="FileModifyDate" />
+                <ScalarProperty Name="FileCreateDate" ColumnName="FileCreateDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+            <ScalarProperty Name="FileName" ColumnName="FileName" />
+            <ScalarProperty Name="Content" ColumnName="Content" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="InvoiceTicket">
+            <EntityTypeMapping TypeName="CustomerInvoiceModel.InvoiceTicket">
+              <MappingFragment StoreEntitySet="InvoiceTicket">
+                <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReadingLogLine">
+            <EntityTypeMapping TypeName="CustomerInvoiceModel.ReadingLogLine">
+              <MappingFragment StoreEntitySet="ReadingLogLine">
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="ReadingLogID" ColumnName="ReadingLogID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoicePassenger">
+            <EntityTypeMapping TypeName="CustomerInvoiceModel.InvoicePassenger">
+              <MappingFragment StoreEntitySet="InvoicePassenger">
+                <ScalarProperty Name="ReadingLogID" ColumnName="ReadingLogID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CustomerInvoiceModel">
+        <EntityTypeShape EntityType="CustomerInvoiceModel.AccountInfo" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5879931640625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.EntityNameValue" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9700325520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.Invoice" Width="1.5" PointX="0.75" PointY="3.75" Height="3.3071704101562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.InvoiceRemark" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.MasterMenu" Width="1.5" PointX="4.75" PointY="3.75" Height="1.779012858072917" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.ObjectMenu" Width="1.5" PointX="6.75" PointY="0.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.PersonMenu" Width="1.5" PointX="2.75" PointY="6.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.ReadingLog" Width="1.5" PointX="6.75" PointY="3.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.InvoiceTicket" Width="1.5" PointX="5.375" PointY="6.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.ReadingLogLine" Width="1.5" PointX="7.375" PointY="6.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="CustomerInvoiceModel.InvoicePassenger" Width="1.5" PointX="9.375" PointY="0.75" Height="1.9700325520833317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

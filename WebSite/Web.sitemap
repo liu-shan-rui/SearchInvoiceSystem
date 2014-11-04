@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="首页" description="">
+      <siteMapNode url="~/NewsList.aspx" title="新闻速览" description="" />
+      <siteMapNode url="~/NewsDetail.aspx" title="新闻详细" description="" />
+      <siteMapNode url="~/NewsSearch.aspx" title="新闻搜索" description="" />
+      <siteMapNode url="~/Comments.aspx" title="留言板" description="" />
+      <siteMapNode url="" title="会员中心" description="">
+        <siteMapNode url="~/Member/UserRegister.aspx" title="会员注册" description="" />
+        <siteMapNode url="~/Member/UserLogin.aspx" title="会员登录" description="" />
+        <siteMapNode url="~/Member/UserModify.aspx" title="修改信息" description="" />
+        <siteMapNode url="~/Member/UserLogout.aspx"  title="退出" description="" />
+      </siteMapNode>      
+      <siteMapNode url="~/Admin/Default.aspx" title="管理中心" description="">
+        <siteMapNode url="~/Admin/UsersManager.aspx" title="用户管理" description="">
+          <siteMapNode url="~/Admin/EditUser.aspx" title="修改用户" description="" />
+        </siteMapNode>
+        <siteMapNode url="" title="新闻管理" description="">
+          <siteMapNode url="~/Admin/NewsCategoriesManager.aspx" title="类别管理" description="" />
+          <siteMapNode url="~/Admin/NewsManager.aspx" title="文章管理" description="">
+            <siteMapNode url="~/Admin/EditNews.aspx" title="修改|添加文章" description="" />
+          </siteMapNode>          
+        </siteMapNode>
+        <siteMapNode url="~/Admin/CommentsManager.aspx" title="留言管理" description="" />
+        <siteMapNode url="~/Admin/AdminLogout.aspx" title="退出" description="" />
+      </siteMapNode>
+    </siteMapNode>
+</siteMap>

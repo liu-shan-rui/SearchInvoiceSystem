@@ -1,0 +1,333 @@
+body
+{
+    color:#333;
+    background-color:#deebf3;
+    font-size:12px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    margin:0px;
+}
+a:link,a:visited,a:active
+{
+    color:#333;
+    text-decoration:none;
+}
+a:hover
+{
+    color:#bf001f;
+    text-decoration:none;
+}
+img
+{
+    border:0;
+}
+ul
+{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+}
+#container
+{
+    background-color:#FFFFFF;
+    width:100%;
+    margin:0 auto;
+}
+/* ----------头部开始---------- */
+#header1
+{
+    height:110px;
+    background:url(Images/1.gif) no-repeat #deebf3;
+}
+#header2
+{
+    height:110px;
+    background:url(Images/header2.gif) no-repeat #deebf3;
+}
+/* ----------头部结束---------- */
+
+/* ----------导航栏开始---------- */
+#nav ul
+{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    
+    height:36px;
+    line-height:36px;
+    background:url(images/nav_bg.png) repeat-x 0 0;
+    
+    margin:0 10px;
+    overflow:hidden;
+}
+#nav li
+{
+    background:url(images/nav_bg.png) no-repeat 0 -108px;
+    float:left;
+    padding:0 4px 0 4px;
+    
+    margin:0 0 0 -2px;
+}
+
+#nav a
+{
+    font-size:120%;
+    
+    display:block;
+    width:108px;
+    text-align:center;
+}
+#nav a:link, #nav a:visited
+{
+    color:#fff;
+}
+#nav a:hover, #nav a:active
+{
+    color:#fff;
+    font-weight:bold;
+    background:url(images/nav_bg.png) no-repeat 0 -144px;
+}
+
+#nav
+{
+    background:url(images/nav_bg.png) no-repeat 0 -36px;
+    
+    clear:both; margin:0px 0px 10px 0px;
+}
+#navinner
+{
+    background:url(images/nav_bg.png) no-repeat 100% -72px;
+}
+
+#nav li div
+{
+   width:320px;
+   text-align:center;
+}
+/* ----------导航栏结束---------- */
+
+/* ----------导航栏下方内容开始---------- */
+
+#navtext-text
+{
+    height:30px;
+    line-height:30px;
+    color:Blue;
+    float:inherit;
+    clear:both;
+    border:solid 1px #96bdde;
+    margin:0px 10px 10px 10px;
+    padding-left:10px;
+}
+
+
+#navtext
+{
+    height:30px;
+    line-height:30px;
+    clear:both;
+    border:solid 1px #96bdde;
+    margin:0px 10px 10px 10px;
+    padding-left:10px;
+}
+#navtext a
+{
+    color:#2f6194;
+}
+/* ----------导航栏下方内容结束---------- */
+
+/* ----------中部两列内容开始---------- */
+#col1_list
+{
+    clear:both;
+    width:15%;
+    float:left;
+    overflow:hidden;
+    margin:0px 0px 10px 10px; _margin:0px 0px 10px 5px;
+}
+#col2_list
+{
+    width:82%;
+    float:right;
+    overflow:hidden;
+    margin:0px 10px 10px 0px; _margin:0px 5px 10px 0px;
+}
+
+#col3_list
+{
+    width:98%;
+    float:right;
+    overflow:hidden;
+    margin:5px 10px 10px 0px; _margin:5px 5px 10px 0px;
+}
+
+.box
+{
+    border:solid 1px #99bbdd;
+}
+.box_title
+{
+    height:28px;
+    line-height:28px;
+    background:url(images/news_bg.gif);
+    color:#275c91;
+    font-weight:bold;
+    padding-left:10px;
+}
+.box_text
+{
+    padding:5px;
+}
+.box_text ul
+{
+    clear:both;
+    overflow:hidden;
+}
+.box_text li
+{
+    float:left;
+    height:30px;
+    line-height:30px;
+}
+#title_ul
+{
+    font-weight:bold;
+}
+#content_ul1
+{
+    background-color:#ebefee;
+}
+#title_ul .li0, #content_ul1 .li0, #content_ul2 .li0
+{
+    width:40%;
+}
+#title_ul .li1, #content_ul1 .li1, #content_ul2 .li1
+{
+    width:20%;
+}
+#title_ul .li2, #content_ul1 .li2, #content_ul2 .li2
+{
+    width:20%;
+}
+#title_ul .li3, #content_ul1 .li3, #content_ul2 .li3
+{
+    width:10%;
+}
+#page
+{
+    clear:both;
+    height:30px;
+    line-height:30px;
+}
+#title_div
+{
+    clear:both;
+    overflow:hidden;
+    height:20px;
+    line-height:20px;
+}
+#title_span a
+{
+    color:#2f6194;
+    text-decoration:underline;
+}
+#title_span a:hover
+{
+    color:#bf001f;
+    text-decoration:underline;
+}
+/* ----------中部两列内容结束---------- */
+    
+/* ----------友情链接开始---------- */
+#links
+{
+    clear:both;    
+    margin:0px 10px 10px 10px;
+}
+/* ----------友情链接结束---------- */
+
+/* ----------底部开始---------- */
+#sitemap
+{
+    clear:both;
+    border:solid 1px #bed0e0;
+    height:30px;
+    line-height:30px;
+    color:#275c91;
+    background-color:#eaf3fb;
+    text-align:center;
+    margin:0px 10px 10px 10px;
+}
+#sitemap a:link, #sitemap a:visited
+{
+    color:#275c91;
+}
+#sitemap a:hover
+{
+    color:#275c91;
+    text-decoration:underline;
+}
+#footer
+{
+    clear:both;
+    text-align:center;
+    margin:0px 10px 10px 10px;
+    height: 30px;
+}
+#footer img
+{
+    vertical-align:middle;
+}
+/* ----------底部结束---------- */
+
+#col1_default
+{
+    clear:both;
+    width:497px;
+    float:left;
+    overflow:hidden;
+    margin:0px 0px 10px 10px; _margin:0px 0px 10px 5px;
+}
+#col2_default
+{
+    width:497px;
+    float:right;
+    overflow:hidden;
+    margin:0px 10px 10px 0px; _margin:0px 5px 10px 0px;
+}
+
+#col
+{
+    clear:both;
+    overflow:hidden;
+    margin:0px 10px 10px 10px; _margin:0px 5px 10px 5px;
+}
+
+#login_div
+{
+    position:absolute;
+    left:50%;
+    width:400px;
+    height:200px;
+    margin-left:-200px;
+    top:50%;
+    margin-top:-100px;
+    background:url(Images/AdminLogin.jpg) no-repeat #f0f0f0;
+}
+#login_div table
+{
+    margin:100px auto auto auto;
+}
+.content_center
+{
+    text-align:center;
+}
+
+.center_table
+{
+    margin:0 auto;
+}
+
+#admin_div a
+{
+    text-decoration:underline;
+}

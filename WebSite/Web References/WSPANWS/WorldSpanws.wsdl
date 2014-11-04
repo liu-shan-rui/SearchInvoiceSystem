@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://action.span.world" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://action.span.world" targetNamespace="http://action.span.world" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://action.span.world">
+      <xsd:element name="createSession">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sid" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createSessionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="createSessionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="closeSession">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sessionNumber" type="xsd:string" />
+            <xsd:element name="sid" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="closeSessionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="closeSessionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="commandText" type="xsd:string" />
+            <xsd:element name="sessionnumber" type="xsd:string" />
+            <xsd:element name="sid" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="executeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="executeReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="closeSessionRequest">
+    <wsdl:part name="parameters" element="impl:closeSession" />
+  </wsdl:message>
+  <wsdl:message name="closeSessionResponse">
+    <wsdl:part name="parameters" element="impl:closeSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="executeResponse">
+    <wsdl:part name="parameters" element="impl:executeResponse" />
+  </wsdl:message>
+  <wsdl:message name="executeRequest">
+    <wsdl:part name="parameters" element="impl:execute" />
+  </wsdl:message>
+  <wsdl:message name="createSessionRequest">
+    <wsdl:part name="parameters" element="impl:createSession" />
+  </wsdl:message>
+  <wsdl:message name="createSessionResponse">
+    <wsdl:part name="parameters" element="impl:createSessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorldSpanws">
+    <wsdl:operation name="createSession">
+      <wsdl:input name="createSessionRequest" message="impl:createSessionRequest" />
+      <wsdl:output name="createSessionResponse" message="impl:createSessionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeSession">
+      <wsdl:input name="closeSessionRequest" message="impl:closeSessionRequest" />
+      <wsdl:output name="closeSessionResponse" message="impl:closeSessionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="execute">
+      <wsdl:input name="executeRequest" message="impl:executeRequest" />
+      <wsdl:output name="executeResponse" message="impl:executeResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorldSpanwsSoapBinding" type="impl:WorldSpanws">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createSession">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createSessionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createSessionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeSession">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeSessionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="closeSessionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execute">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="executeRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="executeResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorldSpanwsService">
+    <wsdl:port name="WorldSpanws" binding="impl:WorldSpanwsSoapBinding">
+      <wsdlsoap:address location="http://ec2-184-169-214-190.us-west-1.compute.amazonaws.com:8080//WebServiceProject/services/WorldSpanws" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
